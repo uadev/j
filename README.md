@@ -15,4 +15,43 @@ const getName = obj => obj.name;
 console.log(capitalize(lower(reverse(getName({ name: 'Buckethead' })))));
 
 //With pipes
-j ({name: 'Buckethead}) `|>` (getName, reverse, lover, capitalize, console.log);
+j ({name: 'Buckethead}) `|>` (getName, reverse, lower, capitalize, console.log);
+
+//Promises 
+user = Promise.resolve({name: 'Buckethead'});
+
+//No pipes
+user.then(() => console.log(capitalize(lower(reverse(getName({ name: 'Buckethead' }))))))
+    .catch(console.error);
+
+//With pipes
+
+
+//or
+user .then(j `|>.` (getName, reverse, lower, capitalize, console.log))
+           .catch(console.error)
+           
+//or 
+try {
+  j (await user) `|>` (getName, reverse, lower, capitalize, console.log)
+} catch (e) {
+  console.error(e)
+}
+
+//or
+j (user) `|>.` (getName, reverse, lower, capitalize, console.log) `||` (console.error)
+j (user) `|>.` (getName, reverse, lower, capitalize, console.log).catch(console.error)
+
+j `Buckhead` `|>` (reverse, lower, capitalize, console.log)
+j `${user}` `|>.` (getName, reverse, lower, capitalize, console.log)
+
+const logReverse = j `|>` (getName, reverse, lower, capitalize, console.log);
+user
+  .then(logReverse)
+  .catch(console.error)
+  
+j (user) `|>.` (logReverse) `||` (console.error)
+j (user) `|>.` (logReverse)
+  .catch(console.error)
+
+
