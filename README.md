@@ -52,16 +52,15 @@ try {
 j (user) `|>.` (getName, reverse, lower, capitalize, console.log) `|e` (console.error)
 j (user) `|>.` (getName, reverse, lower, capitalize, console.log).catch(console.error)
 
-j `${user}` `|>.` (getName, reverse, lower, capitalize, console.log)
+j `${user}` `|>.` (getName, reverse, lower, capitalize, console.log).catch(console.error)
 
-const logReverse = j `|>.` (getName, reverse, lower, capitalize, console.log);
+const logReverse = j `|>` (getName, reverse, lower, capitalize, console.log);
 user
   .then(logReverse)
   .catch(console.error)
   
-j (user) `|>.` (logReverse) `|e` (console.error)
-j (user) `|>.` (logReverse)
-  .catch(console.error)
-j (user) (logReverse) `|e` (console.error);
+j (user) `.` (logReverse) `|e` (console.error)
+j (user) `.` (logReverse).catch(console.error)
+j (user) `.` (logReverse) `|e` (console.error);
 logReverse(user).catch(console.error);
 
