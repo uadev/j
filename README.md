@@ -42,10 +42,9 @@ try {
 j (user) `|>.` (getName, reverse, lower, capitalize, console.log) `||` (console.error)
 j (user) `|>.` (getName, reverse, lower, capitalize, console.log).catch(console.error)
 
-j `Buckhead` `|>` (reverse, lower, capitalize, console.log)
 j `${user}` `|>.` (getName, reverse, lower, capitalize, console.log)
 
-const logReverse = j `|>` (getName, reverse, lower, capitalize, console.log);
+const logReverse = j `|>.` (getName, reverse, lower, capitalize, console.log);
 user
   .then(logReverse)
   .catch(console.error)
@@ -53,5 +52,6 @@ user
 j (user) `|>.` (logReverse) `||` (console.error)
 j (user) `|>.` (logReverse)
   .catch(console.error)
-
+j (user) (logReverse) `||` (console.error);
+logReverse(user).catch(console.error);
 
