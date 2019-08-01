@@ -61,6 +61,6 @@ user
   
 j (user) `.` (logReverse) `|e` (console.error)
 j (user) `.` (logReverse).catch(console.error)
-j (user) `.` (logReverse) `|e` (console.error);
-logReverse(user).catch(console.error);
+j (user) `.` (logReverse) `|e` (console.error)
+logReverse( j (user) `|e` (console.error))
 
