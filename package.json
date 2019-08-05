@@ -29,5 +29,17 @@
     "mocha": "^6.2.0",
     "sinon": "^7.3.2",
     "standard": "^13.1.0"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "context",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "it",
+      "expect"
+    ]
   }
 }
