@@ -1,0 +1,26 @@
+{
+  "name": "j",
+  "version": "1.0.0",
+  "description": "A framework for everything",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uadev/j.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "functional",
+    "templates",
+    "framework"
+  ],
+  "author": "Yuriy Voziy <yuriy.voziy@gmail.com> (https://uadev.github.io/)",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/uadev/j/issues"
+  },
+  "homepage": "https://github.com/uadev/j#readme"
+}
