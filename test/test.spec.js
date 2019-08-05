@@ -16,6 +16,8 @@ describe('Should getName->reverse->lower->capitalize->log', () => {
     sinon.assert.calledWith(log, 'Daehtekcub')
   })
 
+  log.resetHistory()
+
   j({ name: 'Buckethead' })`|>`(getName, reverse, lower, capitalize, log)
 
   it('should again log Daehtekcub', function () {
