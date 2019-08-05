@@ -1,3 +1,5 @@
-function j() {
-  return function() {}
+function j () {
+  return function () {}
 }
+
+module.exports = j
