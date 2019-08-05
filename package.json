@@ -4,7 +4,9 @@
   "description": "A framework for everything",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "test": "node ./node_modules/mocha/bin/mocha",
+    "standard": "standard",
+    "fix-standard": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/uadev/j/issues"
   },
-  "homepage": "https://github.com/uadev/j#readme"
+  "homepage": "https://github.com/uadev/j#readme",
+  "devDependencies": {
+    "mocha": "^6.2.0",
+    "sinon": "^7.3.2",
+    "standard": "^13.1.0"
+  }
 }
