@@ -1,9 +1,10 @@
 const j = require('../src/index')
 const sinon = require('sinon')
 
-const uncarryThis = f => (...args) => f.apply(args)
+// const uncurryThis = f => (...args) => f.apply(args)
+const uncurryThis = Function.bind.bind(Function.call)
 const reverse = str => str.split('').reverse().join('')
-const lower = uncarryThis(String.prototype.toLowerCase)
+const lower = uncurryThis(String.prototype.toLowerCase)
 const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)
 const getName = obj => obj.name
 
@@ -14,7 +15,7 @@ describe('Should getName->reverse->lower->capitalize->log', () => {
 
   j({ name: 'Buckethead' })`|>`(getName, reverse, lower, capitalize, log)
 
-  it('Pipe should return the same result', function () {
+  it('Pipe should return the same result', () => {
     sinon.assert.calledTwice(log)
     sinon.assert.alwaysCalledWith(log, 'Daehtekcub')
   })
