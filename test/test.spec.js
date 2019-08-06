@@ -12,15 +12,10 @@ const log = sinon.spy()
 describe('Should getName->reverse->lower->capitalize->log', () => {
   log(capitalize(lower(reverse(getName({ name: 'Buckethead' })))))
 
-  it('should log Daehtekcub', function () {
-    sinon.assert.calledWith(log, 'Daehtekcub')
-  })
-
-  log.resetHistory()
-
   j({ name: 'Buckethead' })`|>`(getName, reverse, lower, capitalize, log)
 
-  it('should again log Daehtekcub', function () {
-    sinon.assert.calledWith(log, 'Daehtekcub')
+  it('Pipe should return the same result', function () {
+    sinon.assert.calledTwice(log)
+    sinon.assert.alwaysCalledWith(log, 'Daehtekcub')
   })
 })
