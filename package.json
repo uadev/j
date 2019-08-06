@@ -4,7 +4,7 @@
   "description": "A framework for everything",
   "main": "src/index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha",
+    "test": "standard && node --async-stack-traces ./node_modules/mocha/bin/mocha",
     "standard": "standard",
     "fix-standard": "standard --fix"
   },
