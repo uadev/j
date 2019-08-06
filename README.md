@@ -6,10 +6,10 @@ Functional library for everything :)
 
 ```js
 const j = require('j');
-const uncarryThis = f => (...args) => f.apply(args);
+const uncurryThis = Function.bind.bind(Function.call)
 
 const reverse = str => str.split('').reverse().join('');
-const lower = uncarryThis(String.prototype.toLowerCase);
+const lower = uncurryThis(String.prototype.toLowerCase);
 const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1); 
 const getName = obj => obj.name;
 ```
@@ -63,4 +63,14 @@ j (user) `.` (logReverse) `|e` (console.error)
 j (user) `.` (logReverse).catch(console.error)
 j (user) `.` (logReverse) `|e` (console.error)
 logReverse( j (user) `|e` (console.error))
+
+j `${user} |> ${getName, reverse}`
+```
+
+### Jay operators
+
+#### `|>` Pipeline
+  Usage
+  ```js
+  j (value) `|>` (functionA, functionB, ...)()
 
