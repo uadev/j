@@ -74,3 +74,7 @@ j `${user} |> ${getName, reverse}`
   ```js
   j (value) `|>` (functionA, functionB, ...)()
 
+### `.` Chain
+  Usage
+  ```js
+  j `.` (functionA).catch(functionErrorHandling)
